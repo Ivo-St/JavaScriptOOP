@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="scripts/07.DOMManipulation.js"></script>
+    <title></title>
+</head>
+<body>
+<header>
+    <h1>Living Creatures</h1>
+</header>
+<section>
+    <button onclick="testAppendChild()" style="width: 130px; height: 35px">Test appendChild</button>
+    <button onclick="testRemoveChild()" style="width: 130px; height: 35px">Test removeChild</button>
+    <button onclick="testRetrieveElements()" style="width: 140px; height: 35px">Test retrieveElements</button>
+    <button onclick="testAddHandler()" style="width: 130px; height: 35px">Test addHandler</button>
+    <article class="birds">
+        <h2 class="birds-heading">Birds</h2>
+        <ul class="birds-list">
+            <li class="bird">Nightingale</li>
+            <li class="bird">Owl</li>
+            <li class="bird">Hawk
+                <ul>
+                    <li class="sub-bird">Black Hawk</li>
+                    <li class="sub-bird">Chicago Hawk</li>
+                </ul>
+            </li>
+            <li id="eagle" class="bird">Eagle</li>
+            <li class="bird">Sparrow</li>
+            <li class="bird">Falcon</li>
+            <li class="bird">Blackbird</li>
+        </ul>
+    </article>
+    <article class="mammals">
+        <h2 class="mammal-heading">Mammals</h2>
+        <ol class="mammal-list">
+            <li id="dolphin" class="mammal">Dolphin</li>
+            <li class="mammal">Elephant</li>
+            <li class="mammal">Hyena</li>
+        </ol>
+    </article>
+
+</section>
+</body>
+</html>
