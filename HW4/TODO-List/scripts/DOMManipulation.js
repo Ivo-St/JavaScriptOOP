@@ -1,4 +1,6 @@
-var domManipulation = (function domManipulation() {
+todoList = todoList || {};
+
+(function domManipulation() {
     function isDOM(element) {
         return element.nodeType === document.ELEMENT_NODE;
     }
@@ -38,19 +40,19 @@ var domManipulation = (function domManipulation() {
         }
     }
 
-    function retrieveElements(selector){
+    function retrieveElements(selector) {
         return document.querySelectorAll(selector);
     }
 
     function addEvent(element, eventType, eventHandler) {
         var elements = transformToDOM(element);
 
-        for(var i = 0; i < elements.length; i++) {
-            elements[i].addEventListener(eventType,eventHandler);
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener(eventType, eventHandler);
         }
     }
 
-    return {
+    todoList.DOMManipulation = {
         appendChild: appendChild,
         removeChild: removeChild,
         addHandler: addEvent,
@@ -58,23 +60,3 @@ var domManipulation = (function domManipulation() {
     };
 
 }());
-
-func<tion testAppendChild() {
-    var node = document.createElement("h1");
-    var textnode = document.createTextNode("Append Child Test");
-    node.appendChild(textnode);
-    domManipulation.appendChild("h2", node);
-}
-
-function testRemoveChild() {
-    domManipulation.removeChild("h2", "h1");
-}
-
-function testRetrieveElements(){
-    alert("Check console");
-    console.log(domManipulation.retrieveElements("h1"));
-}
-
-function testAddHandler(){
-    domManipulation.addHandler("h1","click",function(){alert("Event")});
-}
