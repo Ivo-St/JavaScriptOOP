@@ -16,7 +16,7 @@ var todoList = todoList || {};
 
         function add() {
             _this.addSection(text.value);
-            text.value = ""
+            text.value = "";
         }
 
         var button = document.createElement("input");

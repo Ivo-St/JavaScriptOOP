@@ -4,7 +4,7 @@ var todoList = todoList || {};
     var ToDoObject = function (name) {};
 
     ToDoObject.prototype.setName = function (value) {
-        if (!(typeof value == 'string' || value instanceof String)) {
+        if (!(typeof value === 'string' || value instanceof String)) {
             throw new Error("Invalid name specified.");
         }
 
