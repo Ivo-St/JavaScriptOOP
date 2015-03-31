@@ -22,29 +22,36 @@ var todoList = todoList || {};
     }
 
     CreateItem.prototype.addToDOM = function () {
-        var node = document.createElement("input");
+        var node,
+            text,
+            textNode,
+            element,
+            wrapper;
+
+        node = document.createElement("input");
         node.setAttribute("type", "checkbox");
         node.setAttribute("id", this._caller.items.length.toString() + this._caller.getName());
         node.setAttribute("class", "item");
         node.onchange = handleChecked;
 
-        var text = document.createElement('label');
+        text = document.createElement('label');
         text.setAttribute("class", "label");
         text.htmlFor = this._caller.items.length.toString() + this._caller.getName();
 
-        var textNode = document.createTextNode(this.getName());
+        textNode = document.createTextNode(this.getName());
+
         text.appendChild(textNode);
 
-        var element = document.getElementById(this._caller.getName());
+        element = document.getElementById(this._caller.getName());
         if (element === null) {
             throw new Error("Cannot attach element to DOM tree.");
         }
 
-        var wrapper = document.createElement("div");
+        wrapper = document.createElement("div");
         wrapper.setAttribute("class", "wrapper");
-        element.appendChild(wrapper);
         wrapper.appendChild(node);
         wrapper.appendChild(text);
+        element.appendChild(wrapper);
     };
 
     todoList.Item = CreateItem;

@@ -6,16 +6,24 @@ require(['container'], function (getContainer) {
             var name = document.getElementById("createCont").value;
             document.getElementById("createCont")
                 .value = "";
+
             todoList.getContainer(name);
         }
 
         function run() {
-            var fragment = new DocumentFragment(),
-                container = document.createElement("div"),
-                body = document.getElementsByTagName('body')[0],
-                buttonWrapper = document.createElement('div'),
-                inputText = document.createElement('input'),
-                inputButton = document.createElement('input');
+            var fragment,
+                container,
+                body,
+                buttonWrapper,
+                inputText,
+                inputButton;
+
+            fragment = new DocumentFragment();
+            container = document.createElement("div");
+            body = document.getElementsByTagName('body')[0];
+            buttonWrapper = document.createElement('div');
+            inputText = document.createElement('input');
+            inputButton = document.createElement('input');
 
             container.setAttribute('id', 'container');
             buttonWrapper.setAttribute('id', 'buttonWrapper');
@@ -24,7 +32,6 @@ require(['container'], function (getContainer) {
             inputText.setAttribute('placeholder', 'Create New Container');
             inputButton.setAttribute('type', 'button');
             inputButton.setAttribute('value', 'New Container');
-
             inputButton.onclick = createContainer;
 
             buttonWrapper.appendChild(inputText);
