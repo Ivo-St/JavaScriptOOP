@@ -48,13 +48,16 @@ require(['ToDoObject', 'factory'], function () {
                 element;
 
             node = document.createElement("div");
-            node.setAttribute("id", this.getName());
-            node.setAttribute("class", "container");
             headLine = document.createElement("h2");
             textNode = document.createTextNode(this.getName());
+
+            node.setAttribute("id", this.getName());
+            node.setAttribute("class", "container");
+
+            element = document.getElementById("container");
+
             headLine.appendChild(textNode);
             node.appendChild(headLine);
-            element = document.getElementById("container");
             element.appendChild(node);
             element.appendChild(document.createElement("br"));
 

@@ -21,12 +21,13 @@ var todoList = todoList || {};
         }
 
         button = document.createElement("input");
+        text = document.createElement("input");
+
         button.setAttribute("class", "buttonNewSection");
         button.setAttribute("type", "button");
         button.setAttribute("value", "New Item");
         button.onclick = add;
 
-        text = document.createElement("input");
         text.setAttribute("class", "textFieldSection");
         text.setAttribute("type", "text");
         text.setAttribute("placeholder", "Add New Item");
@@ -44,12 +45,11 @@ var todoList = todoList || {};
             element;
 
         node = document.createElement("div");
+        headLine = document.createElement("h4");
+        textNode = document.createTextNode(this.getName());
+
         node.setAttribute("id", this.getName());
         node.setAttribute("class", "section");
-
-        headLine = document.createElement("h4");
-
-        textNode = document.createTextNode(this.getName());
 
         headLine.appendChild(textNode);
         node.appendChild(headLine);

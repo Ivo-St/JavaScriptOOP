@@ -29,16 +29,17 @@ var todoList = todoList || {};
             wrapper;
 
         node = document.createElement("input");
+        text = document.createElement('label');
+        textNode = document.createTextNode(this.getName());
+        wrapper = document.createElement("div");
+
         node.setAttribute("type", "checkbox");
         node.setAttribute("id", this._caller.items.length.toString() + this._caller.getName());
         node.setAttribute("class", "item");
         node.onchange = handleChecked;
 
-        text = document.createElement('label');
         text.setAttribute("class", "label");
         text.htmlFor = this._caller.items.length.toString() + this._caller.getName();
-
-        textNode = document.createTextNode(this.getName());
 
         text.appendChild(textNode);
 
@@ -47,8 +48,8 @@ var todoList = todoList || {};
             throw new Error("Cannot attach element to DOM tree.");
         }
 
-        wrapper = document.createElement("div");
         wrapper.setAttribute("class", "wrapper");
+
         wrapper.appendChild(node);
         wrapper.appendChild(text);
         element.appendChild(wrapper);
